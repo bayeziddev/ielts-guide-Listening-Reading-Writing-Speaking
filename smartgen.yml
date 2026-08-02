@@ -1,0 +1,67 @@
+# IELTS Guide Pro - Configuration
+site_name: IELTS Guide Pro
+site_url: https://ielts-guide.smartgentools.com/
+site_author: Sayad Md Bayezid Hosan
+site_description: A comprehensive, article-based IELTS preparation course featuring modules for Listening, Reading, Writing, and Speaking.
+
+repo_name: bayeziddev/ielts-guide-Listening-Reading-Writing-Speaking
+repo_url: https://github.com/bayeziddev/ielts-guide-Listening-Reading-Writing-Speaking
+
+copyright: Copyright &copy; 2026 Sayad Md Bayezid Hosan
+
+theme:
+  name: premium
+  palette:
+    primary: "#1E40AF" # Academic Blue
+    accent: "#F59E0B"  # Education Amber
+  font:
+    text: "Inter, Roboto"
+    code: "Fira Code, Roboto Mono"
+
+nav:
+  - Home: index.md
+  - Dashboard: dashboard/index.md
+  
+  - Listening Module:
+      - Overview: listening/index.md
+      - Test Format: listening/test-format.md
+      - Question Types: listening/question-types.md
+      - Strategies: listening/strategies.md
+      - Common Mistakes: listening/mistakes.md
+      - Sample Transcripts: listening/samples.md
+
+  - Reading Module:
+      - Overview: reading/index.md
+      - Skimming & Scanning: reading/techniques.md
+      - MCQ Guide: reading/mcq.md
+      - True/False/Not Given: reading/tfng.md
+      - Matching Headings: reading/matching.md
+      - Sentence Completion: reading/sentence-completion.md
+      - Summary Completion: reading/summary-completion.md
+      - Tips & Samples: reading/tips-samples.md
+
+  - Writing Module:
+      - Overview: writing/index.md
+      - Task 1 Academic: writing/task1-academic.md
+      - Task 1 General: writing/task1-general.md
+      - Task 2 Essay: writing/task2-essay.md
+      - Band Descriptors: writing/band-descriptors.md
+      - Model Answers: writing/model-answers.md
+      - Common Mistakes: writing/mistakes.md
+      - Vocabulary & Grammar: writing/tips.md
+
+  - Speaking Module:
+      - Overview: speaking/index.md
+      - Part 1 Guide: speaking/part1.md
+      - Part 2 Guide: speaking/part2.md
+      - Part 3 Guide: speaking/part3.md
+      - Fluency & Coherence: speaking/fluency.md
+      - Vocabulary Strategies: speaking/vocabulary.md
+      - Sample Responses: speaking/samples.md
+      - Pronunciation Guide: speaking/pronunciation.md
+
+  - Resources:
+      - Band Score Scale: dashboard/band-score.md
+      - Academic vs General: dashboard/comparison.md
+      - Exam Day Tips: dashboard/exam-tips.md
+      - Checklist: dashboard/checklist.md
