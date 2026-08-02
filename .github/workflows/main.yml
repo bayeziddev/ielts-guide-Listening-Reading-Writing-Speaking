@@ -1,0 +1,41 @@
+name: Deploy IELTS Guide Pro
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r smartGenDocs/requirements.txt # Assuming smartGenDocs requirements are needed
+        pip install -r requirements.txt # If IELTS guide has its own requirements
+        pip install markdown2 Jinja2 PyYAML click watchdog fastapi uvicorn # Core SmartGen Docs dependencies
+
+    - name: Build SmartGen Docs site
+      run: |
+        # Assuming smartgen command is available after installing dependencies
+        # You might need to adjust the path or command based on how smartgen-docs is installed
+        # For example, if it's installed in ~/.local/bin, ensure that path is in PATH
+        export PATH="$HOME/.local/bin:$PATH"
+        smartgen build --config smartgen.yml --output-dir site
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site
+        # This assumes the 'site' directory is created by the smartgen build command
