@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bayeziddev.github.io/ielts-guide-Listening-Reading-Writing-Speaking/sitemap.xml

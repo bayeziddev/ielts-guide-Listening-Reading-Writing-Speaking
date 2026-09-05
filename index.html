@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme applied before first paint, to avoid a flash of the wrong
+         theme. Deliberately tiny and dependency-free: reads the saved
+         choice (or the OS preference on a first visit) and sets
+         data-theme on <html> synchronously, before CSS/images load. -->
+    <script>
+    (function () {
+        try {
+            var THEME_KEY = 'smartgen-theme';
+            var VALID = ['light', 'dark', 'sepia', 'contrast'];
+            var saved = localStorage.getItem(THEME_KEY);
+            var theme = VALID.indexOf(saved) !== -1
+                ? saved
+                : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (theme !== 'light') {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+        } catch (e) { /* localStorage unavailable (e.g. privacy mode) -- fall back to Light */ }
+    })();
+    </script>
+    <meta name="description" content="A comprehensive, article-based IELTS preparation course featuring modules for Listening, Reading, Writing, and Speaking.">
+    
+    <link rel="canonical" href="https://bayeziddev.github.io/ielts-guide-Listening-Reading-Writing-Speaking/">
+    <meta property="og:title" content="Home - IELTS Guide Pro">
+    <meta property="og:description" content="A comprehensive, article-based IELTS preparation course featuring modules for Listening, Reading, Writing, and Speaking.">
+    <meta property="og:url" content="https://bayeziddev.github.io/ielts-guide-Listening-Reading-Writing-Speaking/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Home - IELTS Guide Pro">
+    <meta name="twitter:description" content="A comprehensive, article-based IELTS preparation course featuring modules for Listening, Reading, Writing, and Speaking.">
+    <title>Home - IELTS Guide Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/premium.css">
+    
+    <style>
+        /* Site-level brand override from smartgen.yml. The attribute
+           selector on the second half matches every built-in theme
+           (:root[data-theme="dark"] etc. have equal specificity), and
+           because this block is later in the cascade it wins -- so a
+           configured brand color applies no matter which theme the
+           reader has picked. */
+        :root, :root[data-theme] {
+            --color-primary: #1E40AF;
+            --color-accent: #F59E0B;
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                </button>
+                <div class="brand">
+                    <a href="index.html">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M4 5.5c2-1 5-1 8 .5 3-1.5 6-1.5 8-.5v13c-2-1-5-1-8 .5-3-1.5-6-1.5-8-.5V5.5Z"/><path d="M12 6v13"/></svg>
+                        <span class="brand-name">IELTS Guide Pro</span>
+                        <span class="badge">v2</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <svg class="icon search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/></svg>
+                <input type="text" class="search-input" id="search-input" placeholder="Search documentation...">
+                <span class="search-shortcut">/</span>
+                <div class="search-results" id="search-results"></div>
+            </div>
+
+            <nav class="header-nav">
+                <a href="https://bayeziddev.github.io/ielts-guide-Listening-Reading-Writing-Speaking/" target="_blank" rel="noopener">Visit Smartgen</a>
+            </nav>
+            <div class="header-right">
+                <a href="https://github.com/bayeziddev/smartGenDocs" target="_blank" rel="noopener" class="icon-btn header-github" aria-label="View source on GitHub">
+                    <svg class="icon filled" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+                <a href="community/sponsor.html" class="sponsor-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-10-9.3C.4 7.8 2.3 4 6 4c2 0 3.6 1.1 4.5 2.7L12 8.5l1.5-1.8C14.4 5.1 16 4 18 4c3.7 0 5.6 3.8 4 7.2-2.5 4.7-10 9.3-10 9.3Z"/></svg>
+                    <span>Sponsor</span>
+                </a>
+                <!-- Theme switcher: one trigger button + a small popover menu,
+                     built from the THEMES list in the script at the bottom of
+                     this file. No third-party menu/dropdown library. -->
+                <div class="theme-switcher" id="theme-switcher">
+                    <button class="icon-btn" id="theme-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="theme-menu" aria-label="Choose theme">
+                        <svg class="icon icon-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
+                        <svg class="icon icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12H5M19 12h2.5M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+                    </button>
+                    <div class="theme-menu" id="theme-menu" role="menu" aria-label="Theme" hidden></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- OVERLAY for mobile sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container main-content">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-title">Documentation</span>
+                <button class="sidebar-close" id="sidebar-close" aria-label="Close navigation">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></svg>
+                </button>
+            </div>
+            <nav class="side-nav">
+                <ul>
+                
+                    
+                        
+                            <!-- Single link (top-level) -->
+                            
+                                
+                                
+                                <li class="nav-item nav-item-single active">
+                                    <a href="index.html" data-link="index.html" class="nav-link active">
+                                        <span class="nav-link-text">Home</span>
+                                    </a>
+                                </li>
+                            
+                        
+                    
+                
+                    
+                        
+                            <!-- Single link (top-level) -->
+                            
+                                
+                                
+                                <li class="nav-item nav-item-single">
+                                    <a href="dashboard/index.html" data-link="dashboard/index.html" class="nav-link">
+                                        <span class="nav-link-text">Dashboard</span>
+                                    </a>
+                                </li>
+                            
+                        
+                    
+                
+                    
+                        
+                            <!-- Section with subsections (collapsible) -->
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+
+                            <li class="nav-item nav-item-section nav-section">
+                                <button class="nav-section-toggle" data-section="listening-module">
+                                    <span class="section-label">Listening Module</span>
+                                    <svg class="icon section-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                                </button>
+                                <ul class="nav-submenu">
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="listening/index.html" data-link="listening/index.html" class="nav-link">
+                                                        <span class="nav-link-text">Overview</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="listening/test-format.html" data-link="listening/test-format.html" class="nav-link">
+                                                        <span class="nav-link-text">Test Format</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="listening/question-types.html" data-link="listening/question-types.html" class="nav-link">
+                                                        <span class="nav-link-text">Question Types</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="listening/strategies.html" data-link="listening/strategies.html" class="nav-link">
+                                                        <span class="nav-link-text">Strategies</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="listening/mistakes.html" data-link="listening/mistakes.html" class="nav-link">
+                                                        <span class="nav-link-text">Common Mistakes</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="listening/samples.html" data-link="listening/samples.html" class="nav-link">
+                                                        <span class="nav-link-text">Sample Transcripts</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <!-- Section with subsections (collapsible) -->
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+
+                            <li class="nav-item nav-item-section nav-section">
+                                <button class="nav-section-toggle" data-section="reading-module">
+                                    <span class="section-label">Reading Module</span>
+                                    <svg class="icon section-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                                </button>
+                                <ul class="nav-submenu">
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="reading/index.html" data-link="reading/index.html" class="nav-link">
+                                                        <span class="nav-link-text">Overview</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="reading/techniques.html" data-link="reading/techniques.html" class="nav-link">
+                                                        <span class="nav-link-text">Skimming & Scanning</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="reading/mcq.html" data-link="reading/mcq.html" class="nav-link">
+                                                        <span class="nav-link-text">MCQ Guide</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="reading/tfng.html" data-link="reading/tfng.html" class="nav-link">
+                                                        <span class="nav-link-text">True/False/Not Given</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="reading/matching.html" data-link="reading/matching.html" class="nav-link">
+                                                        <span class="nav-link-text">Matching Headings</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="reading/sentence-completion.html" data-link="reading/sentence-completion.html" class="nav-link">
+                                                        <span class="nav-link-text">Sentence Completion</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="reading/summary-completion.html" data-link="reading/summary-completion.html" class="nav-link">
+                                                        <span class="nav-link-text">Summary Completion</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="reading/tips-samples.html" data-link="reading/tips-samples.html" class="nav-link">
+                                                        <span class="nav-link-text">Tips & Samples</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <!-- Section with subsections (collapsible) -->
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+
+                            <li class="nav-item nav-item-section nav-section">
+                                <button class="nav-section-toggle" data-section="writing-module">
+                                    <span class="section-label">Writing Module</span>
+                                    <svg class="icon section-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                                </button>
+                                <ul class="nav-submenu">
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="writing/index.html" data-link="writing/index.html" class="nav-link">
+                                                        <span class="nav-link-text">Overview</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="writing/task1-academic.html" data-link="writing/task1-academic.html" class="nav-link">
+                                                        <span class="nav-link-text">Task 1 Academic</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="writing/task1-general.html" data-link="writing/task1-general.html" class="nav-link">
+                                                        <span class="nav-link-text">Task 1 General</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="writing/task2-essay.html" data-link="writing/task2-essay.html" class="nav-link">
+                                                        <span class="nav-link-text">Task 2 Essay</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="writing/band-descriptors.html" data-link="writing/band-descriptors.html" class="nav-link">
+                                                        <span class="nav-link-text">Band Descriptors</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="writing/model-answers.html" data-link="writing/model-answers.html" class="nav-link">
+                                                        <span class="nav-link-text">Model Answers</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="writing/mistakes.html" data-link="writing/mistakes.html" class="nav-link">
+                                                        <span class="nav-link-text">Common Mistakes</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="writing/tips.html" data-link="writing/tips.html" class="nav-link">
+                                                        <span class="nav-link-text">Vocabulary & Grammar</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <!-- Section with subsections (collapsible) -->
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+
+                            <li class="nav-item nav-item-section nav-section">
+                                <button class="nav-section-toggle" data-section="speaking-module">
+                                    <span class="section-label">Speaking Module</span>
+                                    <svg class="icon section-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                                </button>
+                                <ul class="nav-submenu">
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="speaking/index.html" data-link="speaking/index.html" class="nav-link">
+                                                        <span class="nav-link-text">Overview</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="speaking/part1.html" data-link="speaking/part1.html" class="nav-link">
+                                                        <span class="nav-link-text">Part 1 Guide</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="speaking/part2.html" data-link="speaking/part2.html" class="nav-link">
+                                                        <span class="nav-link-text">Part 2 Guide</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="speaking/part3.html" data-link="speaking/part3.html" class="nav-link">
+                                                        <span class="nav-link-text">Part 3 Guide</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="speaking/fluency.html" data-link="speaking/fluency.html" class="nav-link">
+                                                        <span class="nav-link-text">Fluency & Coherence</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="speaking/vocabulary.html" data-link="speaking/vocabulary.html" class="nav-link">
+                                                        <span class="nav-link-text">Vocabulary Strategies</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="speaking/samples.html" data-link="speaking/samples.html" class="nav-link">
+                                                        <span class="nav-link-text">Sample Responses</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="speaking/pronunciation.html" data-link="speaking/pronunciation.html" class="nav-link">
+                                                        <span class="nav-link-text">Pronunciation Guide</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <!-- Section with subsections (collapsible) -->
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                    
+                                
+                            
+
+                            <li class="nav-item nav-item-section nav-section">
+                                <button class="nav-section-toggle" data-section="resources">
+                                    <span class="section-label">Resources</span>
+                                    <svg class="icon section-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                                </button>
+                                <ul class="nav-submenu">
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="dashboard/band-score.html" data-link="dashboard/band-score.html" class="nav-link">
+                                                        <span class="nav-link-text">Band Score Scale</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="dashboard/comparison.html" data-link="dashboard/comparison.html" class="nav-link">
+                                                        <span class="nav-link-text">Academic vs General</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="dashboard/exam-tips.html" data-link="dashboard/exam-tips.html" class="nav-link">
+                                                        <span class="nav-link-text">Exam Day Tips</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                <li class="nav-item nav-item-sub">
+                                                    <a href="dashboard/checklist.html" data-link="dashboard/checklist.html" class="nav-link">
+                                                        <span class="nav-link-text">Checklist</span>
+                                                        
+                                                    </a>
+                                                </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </li>
+                        
+                    
+                
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="content">
+            
+            <div class="breadcrumb">
+                
+                    
+                        <a href="index.html">Home</a>
+                        <span class="separator">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                        </span>
+                    
+                
+                    
+                        <span class="breadcrumb-current">Home</span>
+                    
+                
+            </div>
+            
+
+            <article class="markdown-body">
+                
+    <h1 id="welcome-to-ielts-guide-pro">Welcome to IELTS Guide Pro</h1>
+
+<p><strong>IELTS Guide Pro</strong> is a comprehensive, article-based preparation course designed to help students achieve their target band scores in the International English Language Testing System. Built on the robust <strong>SmartGenDocs</strong> platform, this guide provides structured modules for both Academic and General Training versions of the test.</p>
+
+<blockquote>
+  <p>"Preparation is the key to success. With structured learning and consistent practice, achieving a Band 8.0+ is within your reach."</p>
+</blockquote>
+
+<h2 id="course-structure">Course Structure</h2>
+
+<p>The course is divided into four core modules, each focusing on a specific skill set required for the IELTS exam:</p>
+
+<table>
+<thead>
+<tr>
+  <th style="text-align:left;">Module</th>
+  <th style="text-align:left;">Focus</th>
+  <th style="text-align:left;">Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:left;"><strong>Listening</strong></td>
+  <td style="text-align:left;">Understanding spoken English in various contexts</td>
+  <td style="text-align:left;">30 Minutes</td>
+</tr>
+<tr>
+  <td style="text-align:left;"><strong>Reading</strong></td>
+  <td style="text-align:left;">Analyzing and extracting information from texts</td>
+  <td style="text-align:left;">60 Minutes</td>
+</tr>
+<tr>
+  <td style="text-align:left;"><strong>Writing</strong></td>
+  <td style="text-align:left;">Constructing clear, well-argued responses</td>
+  <td style="text-align:left;">60 Minutes</td>
+</tr>
+<tr>
+  <td style="text-align:left;"><strong>Speaking</strong></td>
+  <td style="text-align:left;">Communicating fluently in a face-to-face interview</td>
+  <td style="text-align:left;">11-14 Minutes</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="how-to-use-this-guide">How to Use This Guide</h2>
+
+<p>This guide is designed to be followed sequentially, but you can also jump to specific sections based on your needs. Each module includes:</p>
+
+<ul>
+<li><strong>Overview:</strong> A summary of what to expect in the test.</li>
+<li><strong>Strategies:</strong> Proven techniques for tackling different question types.</li>
+<li><strong>Common Mistakes:</strong> Tips on how to avoid frequent pitfalls.</li>
+<li><strong>Sample Materials:</strong> Transcripts, model answers, and practice examples.</li>
+</ul>
+
+<p>Start your journey today by exploring the <a href="dashboard/index.html">Dashboard</a> for a complete overview of the test format and scoring system.</p>
+
+
+            </article>
+
+            <!-- Page Navigation (Previous / Next) -->
+            <div class="page-nav" id="page-nav">
+                <a href="#" class="page-nav-prev" id="page-nav-prev">
+                    <span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Previous</span>
+                    <span class="page-nav-title"></span>
+                </a>
+                <a href="#" class="page-nav-next" id="page-nav-next">
+                    <span class="page-nav-label">Next <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    <span class="page-nav-title"></span>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer site-footer">
+        <div class="container">
+            
+            <div class="footer-copy">
+                <p>&copy; 2026 <a href="https://bayeziddev.github.io/ielts-guide-Listening-Reading-Writing-Speaking/">Sayad Md Bayezid Hosan</a> &middot; Built with SmartGen Docs &middot;
+                <a href="https://github.com/bayeziddev/smartGenDocs" target="_blank" rel="noopener">GitHub</a> &middot;
+                <a href="LICENSE" target="_blank">MIT License</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== SIDEBAR TOGGLE (Mobile) ==========
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebar-close');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            sidebarOverlay.classList.add('visible');
+            document.body.classList.add('sidebar-open');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            sidebarOverlay.classList.remove('visible');
+            document.body.classList.remove('sidebar-open');
+        }
+
+        menuToggle.addEventListener('click', openSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // ========== COLLAPSIBLE SECTIONS ==========
+        const sectionToggles = document.querySelectorAll('.nav-section-toggle');
+
+        sectionToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const parent = toggle.closest('.nav-item-section');
+                const submenu = parent.querySelector('.nav-submenu');
+                const arrow = toggle.querySelector('.section-arrow');
+
+                const isExpanded = submenu.classList.contains('expanded');
+
+                if (isExpanded) {
+                    submenu.classList.remove('expanded');
+                    parent.classList.remove('active-section', 'expanded');
+                    arrow.classList.remove('expanded');
+                } else {
+                    submenu.classList.add('expanded');
+                    parent.classList.add('active-section', 'expanded');
+                    arrow.classList.add('expanded');
+                }
+            });
+        });
+
+        // ========== THEME SWITCHER ==========
+        // Single source of truth for every built-in theme. To add a new
+        // one: add a row here, then add a matching :root[data-theme="..."]
+        // block to premium.css with the same set of tokens as the others.
+        // See docs/guides/theming.md.
+        const THEME_KEY = 'smartgen-theme';
+        const THEMES = [
+            { value: 'light',    label: 'Light',        swatchBg: '#ffffff', swatchFg: '#4A3AE3' },
+            { value: 'dark',     label: 'Dark',          swatchBg: '#0B0E16', swatchFg: '#8C9EFF' },
+            { value: 'sepia',    label: 'Sepia',         swatchBg: '#F7F1E3', swatchFg: '#A8540B' },
+            { value: 'contrast', label: 'High Contrast', swatchBg: '#000000', swatchFg: '#A6B4FF' },
+        ];
+
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeMenu = document.getElementById('theme-menu');
+
+        function getCurrentTheme() {
+            return document.documentElement.getAttribute('data-theme') || 'light';
+        }
+
+        function applyTheme(value, { persist = true } = {}) {
+            if (value === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', value);
+            }
+            // Back-compat with the old binary body.dark-mode toggle.
+            document.body.classList.toggle('dark-mode', value === 'dark');
+            if (persist) {
+                try { localStorage.setItem(THEME_KEY, value); } catch (e) { /* ignore */ }
+            }
+            renderThemeMenu();
+        }
+
+        function renderThemeMenu() {
+            const current = getCurrentTheme();
+            themeMenu.innerHTML = THEMES.map(t => `
+                <button type="button" class="theme-option" role="menuitemradio"
+                        aria-checked="${t.value === current}" data-theme-value="${t.value}">
+                    <span class="theme-swatch" style="--swatch-bg:${t.swatchBg};--swatch-fg:${t.swatchFg}"></span>
+                    <span class="theme-option-label">${t.label}</span>
+                    <svg class="theme-check icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+                </button>
+            `).join('');
+        }
+
+        function openThemeMenu() {
+            themeMenu.hidden = false;
+            themeToggle.setAttribute('aria-expanded', 'true');
+            const active = themeMenu.querySelector('[aria-checked="true"]');
+            (active || themeMenu.querySelector('.theme-option'))?.focus();
+        }
+
+        function closeThemeMenu({ refocusTrigger = false } = {}) {
+            themeMenu.hidden = true;
+            themeToggle.setAttribute('aria-expanded', 'false');
+            if (refocusTrigger) themeToggle.focus();
+        }
+
+        // Initialize from whatever the pre-paint script in <head> already set.
+        renderThemeMenu();
+
+        themeToggle.addEventListener('click', () => {
+            themeMenu.hidden ? openThemeMenu() : closeThemeMenu();
+        });
+
+        themeMenu.addEventListener('click', (e) => {
+            const option = e.target.closest('.theme-option');
+            if (!option) return;
+            applyTheme(option.dataset.themeValue);
+            closeThemeMenu({ refocusTrigger: true });
+        });
+
+        themeMenu.addEventListener('keydown', (e) => {
+            const options = Array.from(themeMenu.querySelectorAll('.theme-option'));
+            const currentIndex = options.indexOf(document.activeElement);
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                options[(currentIndex + 1) % options.length].focus();
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                options[(currentIndex - 1 + options.length) % options.length].focus();
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                closeThemeMenu({ refocusTrigger: true });
+            } else if (e.key === 'Tab') {
+                closeThemeMenu();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!themeMenu.hidden && !themeSwitcher.contains(e.target)) closeThemeMenu();
+        });
+
+        // ========== SEARCH FUNCTIONALITY ==========
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        let allNavLinks = [];
+
+        function collectNavLinks() {
+            allNavLinks = [];
+            document.querySelectorAll('.nav-link').forEach(link => {
+                allNavLinks.push({
+                    element: link,
+                    text: link.querySelector('.nav-link-text')?.textContent || link.textContent,
+                    href: link.getAttribute('href')
+                });
+            });
+        }
+        collectNavLinks();
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim().toLowerCase();
+
+            if (query.length === 0) {
+                allNavLinks.forEach(item => {
+                    item.element.closest('.nav-item').style.display = '';
+                });
+                searchResults.innerHTML = '';
+                searchResults.classList.remove('visible');
+                return;
+            }
+
+            const matches = [];
+            allNavLinks.forEach(item => {
+                const navItem = item.element.closest('.nav-item');
+                if (item.text.toLowerCase().includes(query)) {
+                    navItem.style.display = '';
+                    matches.push(item);
+                } else {
+                    navItem.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.nav-submenu').forEach(s => {
+                const hasVisible = Array.from(s.querySelectorAll('.nav-item')).some(i => i.style.display !== 'none');
+                if (hasVisible) s.classList.add('expanded');
+            });
+
+            if (matches.length > 0) {
+                searchResults.innerHTML = matches.slice(0, 8).map(item =>
+                    `<a href="${item.href}" class="search-result-item"><span class="search-result-title">${item.text}</span></a>`
+                ).join('');
+            } else {
+                searchResults.innerHTML = '<div class="search-result-item"><span class="search-result-path">No results found</span></div>';
+            }
+            searchResults.classList.add('visible');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-container')) {
+                searchResults.classList.remove('visible');
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+            if (e.key === 'Escape') {
+                searchInput.blur();
+                searchResults.classList.remove('visible');
+            }
+        });
+
+        // ========== COPY CODE BUTTON ==========
+        document.querySelectorAll('pre').forEach(block => {
+            const button = document.createElement('button');
+            button.className = 'copy-code-btn';
+            button.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M5.5 16H4.5A1.5 1.5 0 0 1 3 14.5v-10A1.5 1.5 0 0 1 4.5 3h10A1.5 1.5 0 0 1 16 4.5v1"/></svg><span>Copy</span>';
+            button.addEventListener('click', () => {
+                const codeEl = block.querySelector('code');
+                const code = codeEl ? codeEl.textContent : block.textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.querySelector('span').textContent = 'Copied';
+                    setTimeout(() => { button.querySelector('span').textContent = 'Copy'; }, 2000);
+                });
+            });
+            block.style.position = 'relative';
+            block.appendChild(button);
+        });
+
+        // ========== HIGHLIGHT ACTIVE NAV ==========
+        function updateActiveNav() {
+            document.querySelectorAll('.nav-link.active').forEach(link => link.classList.remove('active'));
+            document.querySelectorAll('.nav-item.active').forEach(item => item.classList.remove('active'));
+
+            // Compare fully-resolved paths, not just the trailing filename.
+            // Every section has its own index.html (api/index.html,
+            // about/index.html, ...), so matching by filename alone marks
+            // ALL of them active at once and breaks Previous/Next below.
+            const normalize = (pathname) => pathname.replace(/\/$/, '').replace(/\/index\.html$/, '');
+            const currentPath = normalize(window.location.pathname);
+            const allLinks = document.querySelectorAll('.nav-link');
+
+            allLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href) return;
+                const linkPath = normalize(new URL(href, window.location.href).pathname);
+                if (linkPath === currentPath) {
+                    link.classList.add('active');
+                    const navItem = link.closest('.nav-item');
+                    if (navItem) navItem.classList.add('active');
+
+                    const section = link.closest('.nav-item-section');
+                    if (section) {
+                        section.classList.add('active-section', 'expanded');
+                        const submenu = section.querySelector('.nav-submenu');
+                        if (submenu) submenu.classList.add('expanded');
+                        const arrow = section.querySelector('.section-arrow');
+                        if (arrow) arrow.classList.add('expanded');
+                    }
+                }
+            });
+        }
+        updateActiveNav();
+
+        // ========== PREVIOUS / NEXT PAGE NAVIGATION ==========
+        function setupPageNav() {
+            const navItems = document.querySelectorAll('.nav-link:not(.nav-link-external)');
+            let currentIndex = -1;
+
+            navItems.forEach((link, index) => {
+                if (link.classList.contains('active')) currentIndex = index;
+            });
+
+            const prevBtn = document.getElementById('page-nav-prev');
+            const nextBtn = document.getElementById('page-nav-next');
+
+            if (currentIndex > 0) {
+                const prevLink = navItems[currentIndex - 1];
+                prevBtn.href = prevLink.getAttribute('href');
+                prevBtn.querySelector('.page-nav-title').textContent = prevLink.querySelector('.nav-link-text')?.textContent || 'Previous';
+            } else {
+                prevBtn.style.visibility = 'hidden';
+            }
+
+            if (currentIndex >= 0 && currentIndex < navItems.length - 1) {
+                const nextLink = navItems[currentIndex + 1];
+                nextBtn.href = nextLink.getAttribute('href');
+                nextBtn.querySelector('.page-nav-title').textContent = nextLink.querySelector('.nav-link-text')?.textContent || 'Next';
+            } else {
+                nextBtn.style.visibility = 'hidden';
+            }
+        }
+        setupPageNav();
+    </script>
+
+    
+<div class="style-switcher" id="style-switcher">
+    <button class="style-switcher-btn" id="style-switcher-toggle" type="button"
+            aria-haspopup="true" aria-expanded="false" aria-controls="style-switcher-menu"
+            aria-label="Switch site style">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21a9 9 0 1 1 0-18c4.97 0 9 3.582 9 8 0 2.21-1.79 3-4 3h-2.2a1.8 1.8 0 0 0-1.026 3.278A1.8 1.8 0 0 1 12.774 21H12Z"/>
+            <circle cx="7.2" cy="12" r="1.15" fill="currentColor" stroke="none"/>
+            <circle cx="9.8" cy="7.4" r="1.15" fill="currentColor" stroke="none"/>
+            <circle cx="15" cy="7.4" r="1.15" fill="currentColor" stroke="none"/>
+        </svg>
+        <span class="style-switcher-label">Styles</span>
+    </button>
+    <div class="style-switcher-menu" id="style-switcher-menu" role="menu" aria-label="Site style" hidden></div>
+</div>
+
+<style>
+    .style-switcher {
+        position: fixed;
+        left: 18px;
+        bottom: 18px;
+        z-index: 9999;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .style-switcher-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(23, 23, 30, 0.92);
+        color: #F4F4F7;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.28), 0 1px 2px rgba(0,0,0,0.2);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .style-switcher-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 26px rgba(0,0,0,0.34), 0 1px 2px rgba(0,0,0,0.24);
+        background: rgba(34, 34, 44, 0.95);
+    }
+    .style-switcher-btn:focus-visible {
+        outline: 2px solid #7C5CFF;
+        outline-offset: 2px;
+    }
+    .style-switcher-btn svg { flex: none; }
+    .style-switcher-menu {
+        position: absolute;
+        left: 0;
+        bottom: calc(100% + 10px);
+        min-width: 240px;
+        max-width: min(320px, calc(100vw - 36px));
+        max-height: min(440px, calc(100vh - 100px));
+        overflow-y: auto;
+        padding: 6px;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(20, 20, 26, 0.97);
+        box-shadow: 0 18px 44px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.28);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    .style-switcher-menu-title {
+        padding: 8px 10px 6px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #9A9AAE;
+    }
+    .style-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 9px 10px;
+        border: 0;
+        border-radius: 9px;
+        background: transparent;
+        color: #F4F4F7;
+        font-size: 13.5px;
+        text-align: left;
+        cursor: pointer;
+        transition: background 0.12s ease;
+    }
+    .style-option:hover,
+    .style-option:focus-visible {
+        background: rgba(255,255,255,0.08);
+        outline: none;
+    }
+    .style-option[aria-current="true"] {
+        background: rgba(124, 92, 255, 0.22);
+    }
+    .style-option-dot {
+        flex: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--dot, #7C5CFF);
+        box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+    }
+    .style-option-text { flex: 1; min-width: 0; }
+    .style-option-name {
+        display: block;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .style-option-desc {
+        display: block;
+        margin-top: 1px;
+        font-size: 11.5px;
+        color: #9A9AAE;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .style-option-check {
+        flex: none;
+        width: 16px;
+        height: 16px;
+        color: #A78BFA;
+        visibility: hidden;
+    }
+    .style-option[aria-current="true"] .style-option-check { visibility: visible; }
+
+    @media (max-width: 640px) {
+        .style-switcher { left: 12px; bottom: 12px; }
+        .style-switcher-label { display: none; }
+        .style-switcher-btn { padding: 12px; border-radius: 50%; }
+    }
+</style>
+    
+<script>
+(function () {
+    var STYLES = [
+        { value: 'default',   label: 'Premium (Original)',        desc: 'The classic SmartGen Docs look', dot: '#4A3AE3' },
+        { value: 'book',      label: 'Book / Writer Docs',         desc: 'Reader-first, page-turn layout', dot: '#4A3AE3' },
+        { value: 'education', label: 'Education / Course',         desc: 'Lesson tracker, course sidebar',  dot: '#2563EB' },
+        { value: 'techblog',  label: 'Tech Blog / Magazine',       desc: 'Editorial, drop-cap articles',    dot: '#C81E3A' },
+        { value: 'agency',    label: 'Agency / Service Portal',    desc: 'Client-facing, gradient hero',    dot: '#0EA5A5' },
+        { value: 'medicine',  label: 'Medicine Docs',              desc: 'Clinical reference, print-ready', dot: '#0B5FA5' },
+        { value: 'apiplay',   label: 'Utility / API Playground',   desc: 'Terminal-style, monospace',       dot: '#16A34A' }
+    ];
+
+    // The root site is the configured primary theme. Alternate themes live
+    // under /styles/<theme>, including the primary theme's own variant.
+    var PRIMARY_STYLE = "premium";
+    if (PRIMARY_STYLE === 'premium') PRIMARY_STYLE = 'default';
+    var STYLE_NAMES = STYLES.map(function (s) { return s.value; });
+
+    var switcher = document.getElementById('style-switcher');
+    if (!switcher) return;
+
+    var toggle = document.getElementById('style-switcher-toggle');
+    var menu = document.getElementById('style-switcher-menu');
+
+    function currentStyleAndSubpath() {
+        var path = window.location.pathname || '/';
+        var marker = '/styles/';
+        var markerIndex = path.indexOf(marker);
+
+        if (markerIndex !== -1) {
+            var remainder = path.slice(markerIndex + marker.length);
+            var parts = remainder.split('/');
+            var variant = parts.shift();
+            if (STYLE_NAMES.indexOf(variant) !== -1) {
+                var subpath = '/' + parts.join('/');
+                if (subpath === '/') subpath = '/index.html';
+                return { style: variant, subpath: subpath };
+            }
+        }
+
+        return {
+            style: PRIMARY_STYLE,
+            subpath: path === '/' || path === '' ? '/index.html' : path
+        };
+    }
+
+    function hrefFor(target, subpath) {
+        if (target === PRIMARY_STYLE) return subpath;
+        return '/styles/' + target + subpath;
+    }
+
+    function renderMenu() {
+        var current = currentStyleAndSubpath();
+        var html = '<div class="style-switcher-menu-title">Switch site style</div>';
+        html += STYLES.map(function (s) {
+            var isCurrent = s.value === current.style;
+            return (
+                '<button type="button" class="style-option" role="menuitemradio" ' +
+                'aria-checked="' + isCurrent + '" aria-current="' + isCurrent + '" ' +
+                'data-style="' + s.value + '" style="--dot:' + s.dot + '">' +
+                '<span class="style-option-dot"></span>' +
+                '<span class="style-option-text">' +
+                '<span class="style-option-name">' + s.label + '</span>' +
+                '<span class="style-option-desc">' + s.desc + '</span>' +
+                '</span>' +
+                '<svg class="style-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>' +
+                '</button>'
+            );
+        }).join('');
+        menu.innerHTML = html;
+    }
+
+    function openMenu() {
+        renderMenu();
+        menu.hidden = false;
+        toggle.setAttribute('aria-expanded', 'true');
+        var active = menu.querySelector('[aria-checked="true"]');
+        (active || menu.querySelector('.style-option')).focus();
+    }
+
+    function closeMenu(opts) {
+        menu.hidden = true;
+        toggle.setAttribute('aria-expanded', 'false');
+        if (opts && opts.refocusTrigger) toggle.focus();
+    }
+
+    toggle.addEventListener('click', function () {
+        menu.hidden ? openMenu() : closeMenu();
+    });
+
+    menu.addEventListener('click', function (e) {
+        var option = e.target.closest('.style-option');
+        if (!option) return;
+        var target = option.dataset.style;
+            var current = currentStyleAndSubpath();
+            if (target === current.style) { closeMenu({ refocusTrigger: true }); return; }
+            window.location.href = hrefFor(target, current.subpath);
+    });
+
+    menu.addEventListener('keydown', function (e) {
+        var options = Array.prototype.slice.call(menu.querySelectorAll('.style-option'));
+        var i = options.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            options[(i + 1) % options.length].focus();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            options[(i - 1 + options.length) % options.length].focus();
+        } else if (e.key === 'Escape') {
+            e.preventDefault();
+            closeMenu({ refocusTrigger: true });
+        } else if (e.key === 'Tab') {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!menu.hidden && !switcher.contains(e.target)) closeMenu();
+    });
+})();
+</script>
+</body>
+</html>
