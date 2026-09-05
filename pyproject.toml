@@ -119,7 +119,7 @@ full = [
 ]
 
 [project.urls]
-Homepage = "https://www.smartgentools.com"
+Homepage = "https://bayeziddev.github.io/ielts-guide-Listening-Reading-Writing-Speaking/"
 Documentation = "https://docs.smartgentools.com/"
 Repository = "https://github.com/bayeziddev/smartGenDocs"
 Issues = "https://github.com/bayeziddev/smartGenDocs/issues"
