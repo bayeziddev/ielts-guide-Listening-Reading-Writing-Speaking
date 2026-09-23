@@ -31,6 +31,29 @@ def remove_multi_style_switcher(output_dir):
             with open(path, 'w', encoding='utf-8') as handle:
                 handle.write(updated)
 
+
+def fix_mobile_navigation(output_dir):
+    """Keep the open Book drawer above the dimmer on touch screens."""
+    candidates = (
+        os.path.join(output_dir, 'static', 'book', 'css', 'book.css'),
+        os.path.join(output_dir, 'static', 'css', 'book.css'),
+    )
+    css_path = next((path for path in candidates if os.path.exists(path)), None)
+    if css_path is None:
+        return
+    override = """
+/* IELTS project override: the drawer must remain above its mobile dimmer. */
+@media (max-width: 980px) {
+    .book-sidebar-overlay { z-index: 900 !important; }
+    .book-sidebar,
+    .book-sidebar.open { z-index: 1000 !important; pointer-events: auto !important; }
+    .book-sidebar .book-nav,
+    .book-sidebar .book-nav-link { pointer-events: auto !important; touch-action: manipulation; }
+}
+"""
+    with open(css_path, 'a', encoding='utf-8') as handle:
+        handle.write(override)
+
 def main():
     config_file = "smartgen.yml"
     output_dir = "site"
@@ -52,6 +75,7 @@ def main():
     image_target = os.path.join(output_dir, "images")
     if os.path.isdir(image_source):
         shutil.copytree(image_source, image_target, dirs_exist_ok=True)
+    fix_mobile_navigation(output_dir)
     remove_multi_style_switcher(output_dir)
     print(f"Build successfully completed with Book theme in '{output_dir}/'!")
 
