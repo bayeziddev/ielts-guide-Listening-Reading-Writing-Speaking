@@ -44,11 +44,15 @@ def fix_mobile_navigation(output_dir):
     override = """
 /* IELTS project override: the drawer must remain above its mobile dimmer. */
 @media (max-width: 980px) {
+    /* The sidebar is inside .book-shell; raise the parent stacking context,
+       otherwise a child z-index cannot escape an overlay sibling. */
     .book-sidebar-overlay { z-index: 900 !important; }
+    .book-shell { position: relative; z-index: 1000 !important; }
     .book-sidebar,
-    .book-sidebar.open { z-index: 1000 !important; pointer-events: auto !important; }
+    .book-sidebar.open { z-index: 1001 !important; pointer-events: auto !important; }
     .book-sidebar .book-nav,
     .book-sidebar .book-nav-link { pointer-events: auto !important; touch-action: manipulation; }
+    .book-shell:has(.book-sidebar.open) .book-main { opacity: .45; pointer-events: none; }
 }
 """
     with open(css_path, 'a', encoding='utf-8') as handle:
