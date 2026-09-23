@@ -22,7 +22,21 @@ nav:
   - Home: index.md
   - Dashboard: dashboard/index.md
   - Grammar Foundations:
-      - Complete Grammar Course: grammar/index.md
+      - Course Overview: grammar/index.md
+      - 1. Parts of Speech: grammar/01-parts-of-speech.md
+      - 2. Noun: grammar/02-noun.md
+      - 3. Pronoun: grammar/03-pronoun.md
+      - 4. Verb: grammar/04-verb.md
+      - 5. Adjective and Adverb: grammar/05-adjective-and-adverb.md
+      - 6. Preposition, Conjunction and Interjection: grammar/06-preposition-conjunction-interjection.md
+      - 7. Number and Person: grammar/07-number-and-person.md
+      - 8. Sentence Types: grammar/08-sentence-types.md
+      - 9. Tense: grammar/09-tense.md
+      - 10. Conditional Sentence: grammar/10-conditional-sentence.md
+      - 11. Right Forms of Verb: grammar/11-right-forms-of-verb.md
+      - 12. Connector and Linking Words: grammar/12-connectors-and-linking-words.md
+      - 13. Phrases and Clauses: grammar/13-phrases-and-clauses.md
+      - 14. Idioms: grammar/14-idioms.md
   
   - Listening Module:
       - Overview: listening/index.md
