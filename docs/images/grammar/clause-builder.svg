@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+<title id="title">Phrase and clause builder</title>
+<desc id="desc">A visual progression from phrase to dependent clause to complete complex sentence.</desc>
+<rect width="1200" height="600" rx="28" fill="#fffdf7"/>
+<text x="600" y="56" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#123b6d">Build a complete complex sentence</text>
+<g font-family="Arial,sans-serif" text-anchor="middle">
+<rect x="70" y="150" width="300" height="180" rx="20" fill="#f1f5f9" stroke="#64748b" stroke-width="3"/><text x="220" y="195" font-size="24" font-weight="700" fill="#334155">PHRASE</text><text x="220" y="238" font-size="20" fill="#334155">in many cities</text><text x="220" y="278" font-size="17" fill="#475569">no complete subject + verb</text><text x="220" y="308" font-size="17" fill="#475569">not a sentence alone</text>
+<rect x="450" y="150" width="300" height="180" rx="20" fill="#fef3c7" stroke="#d97706" stroke-width="3"/><text x="600" y="195" font-size="24" font-weight="700" fill="#92400e">DEPENDENT CLAUSE</text><text x="600" y="238" font-size="20" fill="#92400e">because the city grew</text><text x="600" y="278" font-size="17" fill="#78350f">subject + verb, but incomplete</text><text x="600" y="308" font-size="17" fill="#78350f">needs a main clause</text>
+<rect x="830" y="150" width="300" height="180" rx="20" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/><text x="980" y="195" font-size="24" font-weight="700" fill="#166534">COMPLETE</text><text x="980" y="238" font-size="18" fill="#166534">Because the city grew,</text><text x="980" y="270" font-size="18" fill="#166534">congestion increased.</text><text x="980" y="308" font-size="17" fill="#166534">dependent + independent</text>
+</g>
+<path d="M375 240 H440" stroke="#2563eb" stroke-width="5"/><path d="M755 240 H820" stroke="#2563eb" stroke-width="5"/><path d="M430 240 l-16 -12 v24 z" fill="#2563eb"/><path d="M810 240 l-16 -12 v24 z" fill="#2563eb"/>
+<rect x="220" y="420" width="760" height="88" rx="18" fill="#dbeafe"/><text x="600" y="458" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#1e3a8a">Bengali support: কারণ/যদিও + clause, তারপর complete main idea</text><text x="600" y="490" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#1e3a8a">Although the plan was costly, it was effective.</text>
+</svg>

@@ -6,6 +6,11 @@
 
 Read the explanation first, then say the examples aloud. Change one detail in each example, such as the subject, time, or place. Complete the practice without looking back and use the answer key to understand the reason for each answer. Finish by writing two sentences about your own life or city.
 
+
+![Conditional sentence ladder showing zero, first, second, and third conditional meanings.](../images/grammar/conditional-ladder.svg)
+
+*Figure 4. The four conditional patterns move from general truth to an unreal past.*
+
 A conditional sentence links a condition with a result. The **if-clause** gives the condition and the main clause gives the result. The clauses can change order: **If governments invest, services improve** and **Services improve if governments invest**. A comma is normally used when the if-clause comes first.
 
 ### Main conditional patterns

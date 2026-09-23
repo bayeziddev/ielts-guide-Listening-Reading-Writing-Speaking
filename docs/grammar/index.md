@@ -32,3 +32,9 @@ On the first day, read one chapter and copy five useful example sentences. On th
 ## Reference approach
 
 The explanations follow standard contemporary English grammar and are aligned with the grammatical range and accuracy expected in IELTS. Cambridge Grammar and official IELTS scoring information are cited in the relevant lessons.
+
+## Visual study guide
+
+![A four-step grammar study cycle: notice, control, communicate, and review.](../images/grammar/grammar-study-cycle.svg)
+
+*Figure 6. Repeat this cycle for every chapter. First notice the pattern, then control it in a short exercise, use it in an IELTS answer, and review your errors.*

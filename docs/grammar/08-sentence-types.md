@@ -6,6 +6,11 @@
 
 Read the explanation first, then say the examples aloud. Change one detail in each example, such as the subject, time, or place. Complete the practice without looking back and use the answer key to understand the reason for each answer. Finish by writing two sentences about your own life or city.
 
+
+![Sentence anatomy diagram showing subject, verb, object, and modifier in an IELTS-friendly example.](../images/grammar/sentence-anatomy.svg)
+
+*Figure 2. Start with a complete subject and verb, then add the object or extra information.*
+
 A **sentence** expresses a complete thought. A clause contains a subject and a verb. An **independent clause** can stand alone; a **dependent clause** cannot.
 
 ### Four useful sentence patterns

@@ -6,6 +6,11 @@
 
 Read the explanation first, then say the examples aloud. Change one detail in each example, such as the subject, time, or place. Complete the practice without looking back and use the answer key to understand the reason for each answer. Finish by writing two sentences about your own life or city.
 
+
+![IELTS tense timeline from past to present and future, with example sentences.](../images/grammar/tense-timeline.svg)
+
+*Figure 3. Locate the event on the timeline before choosing the tense.*
+
 Tense places an event in time. Aspect shows whether an event is complete, ongoing, repeated, or connected to another time. IELTS does not reward using every tense; it rewards choosing the tense that matches the meaning.
 
 ### The core tenses

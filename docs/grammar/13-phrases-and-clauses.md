@@ -40,6 +40,11 @@ Write a short four-sentence response about an IELTS topic such as education, hea
 
 ## Deep lesson: expand ideas without losing control
 
+
+![Clause builder showing how a phrase and dependent clause become a complete complex sentence.](../images/grammar/clause-builder.svg)
+
+*Figure 5. A dependent clause becomes useful when it is attached to an independent clause.*
+
 A phrase is a group of words without a complete subject–verb relationship. A clause contains a subject and a verb. A phrase can be part of a clause; a dependent clause needs an independent clause to complete its meaning.
 
 ### Main types

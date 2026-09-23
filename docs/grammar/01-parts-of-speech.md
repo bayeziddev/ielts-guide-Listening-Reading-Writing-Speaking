@@ -6,6 +6,11 @@
 
 Read the explanation first, then say the examples aloud. Change one detail in each example, such as the subject, time, or place. Complete the practice without looking back and use the answer key to understand the reason for each answer. Finish by writing two sentences about your own life or city.
 
+
+![A visual map of English word classes, showing the job of each class in a sentence.](../images/grammar/word-classes.svg)
+
+*Figure 1. Use the word-class map to ask what job each word performs. The Bengali labels are a support, not a replacement for the English examples.*
+
 A **part of speech** is a group of words classified by the job it performs in a sentence. Traditional grammar commonly identifies nouns, pronouns, verbs, adjectives, adverbs, prepositions, conjunctions, and interjections. A word can belong to different classes in different sentences.
 
 ### The main word classes
