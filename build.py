@@ -3,6 +3,34 @@ import os
 import shutil
 from smartgen_docs.core import Builder
 
+
+def remove_multi_style_switcher(output_dir):
+    """Keep the configured Book/Writer style as the only site style.
+
+    SmartGenDocs' shared style-switcher exposes every installed theme. This
+    learner site intentionally uses only the Book theme, so remove that
+    optional UI block from the generated pages while keeping Book's Day/Night
+    reading-mode control.
+    """
+    marker = '<div class="style-switcher" id="style-switcher">'
+    end_marker = '</script>\n</body>'
+    for root, _, files in os.walk(output_dir):
+        for filename in files:
+            if not filename.endswith('.html'):
+                continue
+            path = os.path.join(root, filename)
+            with open(path, 'r', encoding='utf-8') as handle:
+                html = handle.read()
+            start = html.find(marker)
+            if start == -1:
+                continue
+            end = html.find(end_marker, start)
+            if end == -1:
+                raise RuntimeError(f"Could not locate style switcher ending in {path}")
+            updated = html[:start] + html[end + len('</script>'):]
+            with open(path, 'w', encoding='utf-8') as handle:
+                handle.write(updated)
+
 def main():
     config_file = "smartgen.yml"
     output_dir = "site"
@@ -24,6 +52,7 @@ def main():
     image_target = os.path.join(output_dir, "images")
     if os.path.isdir(image_source):
         shutil.copytree(image_source, image_target, dirs_exist_ok=True)
+    remove_multi_style_switcher(output_dir)
     print(f"Build successfully completed with Book theme in '{output_dir}/'!")
 
 if __name__ == "__main__":

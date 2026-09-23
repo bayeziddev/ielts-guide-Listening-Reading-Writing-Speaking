@@ -10,7 +10,7 @@ repo_url: https://github.com/bayeziddev/ielts-guide-Listening-Reading-Writing-Sp
 copyright: Copyright &copy; 2026 Sayad Md Bayezid Hosan
 
 theme:
-  name: premium
+  name: book
   palette:
     primary: "#1E40AF" # Academic Blue
     accent: "#F59E0B"  # Education Amber
