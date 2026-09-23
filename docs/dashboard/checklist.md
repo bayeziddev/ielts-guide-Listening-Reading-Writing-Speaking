@@ -8,6 +8,11 @@ A strong IELTS plan has five stages: understand the test, build language foundat
 
 > **বাংলা সহায়তা:** পরীক্ষার নাম বা band মুখস্থ করলেই প্রস্তুতি সম্পূর্ণ হয় না। নিজের বর্তমান অবস্থান মাপুন, দুর্বল জায়গা চিহ্নিত করুন, এবং ছোট ছোট নিয়মিত কাজ করুন।
 
+![Study Checklist](../images/ielts/study-checklist.svg)
+
+*Visual guide: Study Checklist.*
+
+
 ## What you need to know
 
 Prepare identification and test-day materials according to your centre instructions. Prepare study materials such as official sample tests, a notebook, a timer, headphones, and a quiet speaking-recording space. Your plan should include Listening, Reading, Writing, Speaking, vocabulary, grammar, and weekly review.

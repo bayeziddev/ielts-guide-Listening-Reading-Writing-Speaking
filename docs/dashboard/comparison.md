@@ -8,6 +8,11 @@ Academic IELTS is normally used for university or professional registration. Gen
 
 > **বাংলা সহায়তা:** পরীক্ষার নাম বা band মুখস্থ করলেই প্রস্তুতি সম্পূর্ণ হয় না। নিজের বর্তমান অবস্থান মাপুন, দুর্বল জায়গা চিহ্নিত করুন, এবং ছোট ছোট নিয়মিত কাজ করুন।
 
+![Academic General](../images/ielts/academic-general.svg)
+
+*Visual guide: Academic General.*
+
+
 ## What you need to know
 
 Listening and Speaking are the same in both versions. Reading and Writing are different. Academic Reading uses longer academic texts and Academic Writing Task 1 describes visual information. General Training Reading uses practical texts and General Training Writing Task 1 is a letter.

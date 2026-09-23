@@ -8,6 +8,11 @@ This lesson is written for a beginner. Read the explanation slowly, study the ex
 
 > **বাংলা সহায়তা:** আগে প্রশ্নের কাজ বুঝুন, পরে নিয়মটি প্রয়োগ করুন। প্রতিটি নতুন নিয়মের জন্য নিজের জীবনের একটি সহজ উদাহরণ লিখুন। বাংলা থেকে শব্দে-শব্দে অনুবাদ না করে ইংরেজি বাক্যের স্বাভাবিক গঠন অনুশীলন করুন।
 
+![Listening Question Types](../images/ielts/listening-question-types.svg)
+
+*Visual guide: Listening Question Types.*
+
+
 ## What this skill means
 
 In IELTS, this skill is connected to meaning and accuracy. You must first understand what the question or task requires. Next, locate the important information. Finally, give an answer that fits the grammar, word limit, audience, and purpose. A learner who follows these three stages usually improves faster than a learner who only memorises lists.

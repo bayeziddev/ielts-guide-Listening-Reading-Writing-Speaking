@@ -8,6 +8,11 @@ Exam performance depends on preparation and careful procedure. Arrive early, bri
 
 > **বাংলা সহায়তা:** পরীক্ষার নাম বা band মুখস্থ করলেই প্রস্তুতি সম্পূর্ণ হয় না। নিজের বর্তমান অবস্থান মাপুন, দুর্বল জায়গা চিহ্নিত করুন, এবং ছোট ছোট নিয়মিত কাজ করুন।
 
+![Exam Day](../images/ielts/exam-day.svg)
+
+*Visual guide: Exam Day.*
+
+
 ## What you need to know
 
 During Listening, follow the recording and do not let one missed answer destroy the next one. During Reading, manage time and answer every question. During Writing, plan, develop, and check. During Speaking, answer naturally and ask for clarification only when you genuinely need it.
