@@ -1,12 +1,12 @@
 # ielts-guide-Listening-Reading-Writing-Speaking
-A comprehensive, article-based IELTS preparation course built on smartGenDocs. Features complete modules for IELTS Academic &amp; General Training (Listening, Reading, Writing, Speaking) with optimized MDX/Markdown documentation templates
+A comprehensive, article-based IELTS preparation course built on smartGenDocs. It includes a complete beginner-friendly Grammar Foundations course plus IELTS Academic and General Training modules for Listening, Reading, Writing, and Speaking.
 ficial developer documentation and API reference for the Smartgen NexusLeads B2B lead discovery, verification, enrichment, outreach-draft, and Google Sheets export platform.
 
 This documentation is authored in Markdown and built with [SmartGen Docs](https://docs.smartgentools.com/). The site is designed to be deployed as a static GitHub Pages project and can be moved to a custom documentation domain later.
 
 ## What is included
 
-The `docs/` directory covers the platform architecture, lead lifecycle, authentication, account and BYOK APIs, discovery, enrichment, export, usage, pricing, security, Google Sheets setup, paid activation, environment bindings, data model, troubleshooting, and contribution rules. `smartgen.yml` defines the branded navigation and theme. `.github/workflows/deploy-docs.yml` builds and deploys the site on pushes to `main` or through a manual workflow run.
+The `docs/` directory contains the learner-facing IELTS course. The `grammar/` module explains fourteen foundations from parts of speech, nouns, and verbs through tense, conditionals, linking words, clauses, and idioms. The Listening, Reading, Writing, Speaking, Dashboard, and Resources modules then apply those foundations to exam preparation. `smartgen.yml` defines the branded navigation and theme, while `.github/workflows/main.yml` builds and deploys the site on pushes to `main` or through a manual workflow run.
 
 ## Local build
 

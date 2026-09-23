@@ -2,7 +2,7 @@
 site_name: IELTS Guide Pro
 site_url: https://bayeziddev.github.io/ielts-guide-Listening-Reading-Writing-Speaking/
 site_author: Sayad Md Bayezid Hosan
-site_description: A comprehensive, article-based IELTS preparation course featuring modules for Listening, Reading, Writing, and Speaking.
+site_description: A complete beginner-friendly IELTS preparation course covering grammar, Listening, Reading, Writing, and Speaking for Academic and General Training learners.
 
 repo_name: bayeziddev/ielts-guide-Listening-Reading-Writing-Speaking
 repo_url: https://github.com/bayeziddev/ielts-guide-Listening-Reading-Writing-Speaking
@@ -21,6 +21,8 @@ theme:
 nav:
   - Home: index.md
   - Dashboard: dashboard/index.md
+  - Grammar Foundations:
+      - Complete Grammar Course: grammar/index.md
   
   - Listening Module:
       - Overview: listening/index.md
