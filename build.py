@@ -58,6 +58,37 @@ def fix_mobile_navigation(output_dir):
     with open(css_path, 'a', encoding='utf-8') as handle:
         handle.write(override)
 
+
+def fix_day_night_toggle(output_dir):
+    """Make the Book toolbar icon a reliable one-tap Day/Night toggle."""
+    script = """
+<script>
+(function () {
+    const button = document.getElementById('theme-toggle');
+    const menu = document.getElementById('theme-menu');
+    if (!button) return;
+    button.addEventListener('click', function () {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const next = isDark ? 'light' : 'dark';
+        if (next === 'light') document.documentElement.removeAttribute('data-theme');
+        else document.documentElement.setAttribute('data-theme', 'dark');
+        try { localStorage.setItem('smartgen-theme', next); } catch (e) { /* ignore */ }
+        if (menu) menu.hidden = true;
+        button.setAttribute('aria-label', next === 'dark' ? 'Switch to Day mode' : 'Switch to Night mode');
+    });
+})();
+</script>
+"""
+    for root, _, files in os.walk(output_dir):
+        for filename in files:
+            if filename.endswith('.html'):
+                path = os.path.join(root, filename)
+                with open(path, 'r', encoding='utf-8') as handle:
+                    html = handle.read()
+                html = html.replace('</body>', script + '</body>')
+                with open(path, 'w', encoding='utf-8') as handle:
+                    handle.write(html)
+
 def main():
     config_file = "smartgen.yml"
     output_dir = "site"
@@ -81,6 +112,7 @@ def main():
         shutil.copytree(image_source, image_target, dirs_exist_ok=True)
     fix_mobile_navigation(output_dir)
     remove_multi_style_switcher(output_dir)
+    fix_day_night_toggle(output_dir)
     print(f"Build successfully completed with Book theme in '{output_dir}/'!")
 
 if __name__ == "__main__":
